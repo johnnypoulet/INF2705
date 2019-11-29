@@ -2,6 +2,7 @@
 
 layout(points) in;
 layout(triangle_strip, max_vertices = 4) out;
+// layout(points, max_vertices = 1) out;
 
 in Attribs {
   vec4 couleur;
@@ -41,7 +42,7 @@ void main() {
       AttribsOut.texCoord = coins[i] + vec2(0.5, 0.5);
       EmitVertex();
     }
-    // Mr Oizo
+    // Oiseaux
   } else if (texnumero == 2) {
     for (int i = 0; i < 4; i++) {
       vec2 decalage = coins[i];
@@ -59,7 +60,9 @@ void main() {
       }
       EmitVertex();
     }
-    // Avec pas de texture
+    // Sans texture (quadrilatères)
+    // On aurait pu gérer les particules avec un autre shader en points (max_vertices = 1)
+    // (un peu) comme dans nuanceurGeomPoints.glsl
   } else {
     for (int i = 0; i < 4; i++) {
       vec2 decalage = coins[i];
