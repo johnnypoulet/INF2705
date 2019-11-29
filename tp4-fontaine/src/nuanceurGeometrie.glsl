@@ -41,7 +41,7 @@ void main() {
       AttribsOut.texCoord = coins[i] + vec2(0.5, 0.5);
       EmitVertex();
     }
-    // Moéno
+    // Mr Oizo
   } else if (texnumero == 2) {
     for (int i = 0; i < 4; i++) {
       vec2 decalage = coins[i];
@@ -59,7 +59,7 @@ void main() {
       }
       EmitVertex();
     }
-    // Podtextur
+    // Avec pas de texture
   } else {
     for (int i = 0; i < 4; i++) {
       vec2 decalage = coins[i];
