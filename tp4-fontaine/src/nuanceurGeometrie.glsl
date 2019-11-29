@@ -32,12 +32,13 @@ void main() {
       float angle = 6.0 * AttribsIn[0].tempsDeVieRestant;
       mat2 rotation = mat2(cos(angle), sin(angle), -sin(angle), cos(angle));
 
-      vec2 decalage = coins[i];
+      vec2 decalage = rotation * coins[i];
       vec4 pos = vec4(gl_in[0].gl_Position.xy + fact * decalage,
                       gl_in[0].gl_Position.zw);
       gl_Position = matrProj * pos;
       AttribsOut.couleur = AttribsIn[0].couleur;
-      AttribsOut.texCoord = rotation * (coins[i]) + vec2(0.5, 0.5);
+      // AttribsOut.texCoord = rotation * coins[i] + vec2(0.5, 0.5);
+      AttribsOut.texCoord = coins[i] + vec2(0.5, 0.5);
       EmitVertex();
     }
     // Moéno
